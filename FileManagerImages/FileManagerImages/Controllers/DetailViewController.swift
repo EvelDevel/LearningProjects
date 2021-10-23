@@ -12,6 +12,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var selectedImage: String?
+    var total = 0
+    var position = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +30,13 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
+}
+
+// MARK: Privates
+extension DetailViewController {
     
     private func defaultSetup() {
-        
-        title = selectedImage
+        title = "Picture \(position) of \(total)"
         navigationItem.largeTitleDisplayMode = .never
     }
     

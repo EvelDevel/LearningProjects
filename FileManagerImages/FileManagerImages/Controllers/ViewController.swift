@@ -16,10 +16,13 @@ class ViewController: UITableViewController {
         defaultSetup()
         findPictures()
     }
-    
+}
+
+// MARK: Privates
+extension ViewController {
+
     private func defaultSetup() {
-        
-        title = "Dune folder"
+        title = "Dune"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         if #available(iOS 15, *) {
@@ -28,7 +31,6 @@ class ViewController: UITableViewController {
     }
     
     private func findPictures() {
-        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -38,6 +40,7 @@ class ViewController: UITableViewController {
                 pictures.append(item)
             }
         }
+        pictures.sort()
     }
 }
 
@@ -57,6 +60,8 @@ extension ViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]
+            vc.total = pictures.count
+            vc.position = indexPath.row + 1
             navigationController?.pushViewController(vc, animated: true)
         }
     }
