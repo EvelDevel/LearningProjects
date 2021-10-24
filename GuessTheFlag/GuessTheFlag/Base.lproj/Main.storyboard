@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8gG-Uz-cqG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,35 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="249-B8-Ppk">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="249-B8-Ppk">
                                 <rect key="frame" x="107" y="230" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99645298719999997" green="0.84873276949999998" blue="0.225723803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="france"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dNI-xI-FmY"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-ES-K2g">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-ES-K2g">
                                 <rect key="frame" x="107" y="360" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99645298719999997" green="0.84873276949999998" blue="0.225723803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ireland"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3EK-RH-tvM"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvK-zp-Ix1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvK-zp-Ix1">
                                 <rect key="frame" x="107" y="100" width="200" height="100"/>
-                                <color key="backgroundColor" red="0.99332290889999997" green="0.85309398169999995" blue="0.22719326619999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="estonia"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G8W-Sr-3ai"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="249-B8-Ppk" firstAttribute="top" secondItem="tvK-zp-Ix1" secondAttribute="bottom" constant="30" id="Esz-KG-Z05"/>
                             <constraint firstItem="tvK-zp-Ix1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Jdd-3p-Sxv"/>
+                            <constraint firstItem="RA4-ES-K2g" firstAttribute="centerX" secondItem="249-B8-Ppk" secondAttribute="centerX" id="a9m-9e-NAb"/>
+                            <constraint firstItem="RA4-ES-K2g" firstAttribute="top" secondItem="249-B8-Ppk" secondAttribute="bottom" constant="30" id="p9k-2r-C31"/>
                             <constraint firstItem="tvK-zp-Ix1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uhp-0F-en4"/>
+                            <constraint firstItem="249-B8-Ppk" firstAttribute="centerX" secondItem="tvK-zp-Ix1" secondAttribute="centerX" id="wr5-mv-iW6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NlB-o0-D7F"/>
+                    <connections>
+                        <outlet property="button1" destination="tvK-zp-Ix1" id="6uC-kL-aFz"/>
+                        <outlet property="button2" destination="249-B8-Ppk" id="4Sz-q8-zHI"/>
+                        <outlet property="button3" destination="RA4-ES-K2g" id="Uhm-zT-3iN"/>
+                        <outletCollection property="buttons" destination="tvK-zp-Ix1" collectionClass="NSMutableArray" id="9fc-vB-Idg"/>
+                        <outletCollection property="buttons" destination="249-B8-Ppk" collectionClass="NSMutableArray" id="vQl-8i-flt"/>
+                        <outletCollection property="buttons" destination="RA4-ES-K2g" collectionClass="NSMutableArray" id="ORJ-I8-t7v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,6 +77,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LoK-N2-ekX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="o6a-WJ-9ZI"/>
                     </connections>
@@ -70,6 +90,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="estonia" width="200" height="100"/>
+        <image name="france" width="200" height="100"/>
+        <image name="ireland" width="200" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
