@@ -22,12 +22,64 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        var title: String
+        
+        totalAnswered += 1
+        
+        if sender.tag == correctAnswer {
+            title = "Correct"
+            score += 1
+        } else {
+            title = "Wrong"
+            score -= 1
+        }
+        
+        let ac = UIAlertController(
+            title: title,
+            message: "Your score is \(score)",
+            preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(
+            title: "Continue",
+            style: .default,
+            handler: askQuestion))
+        
+        present(ac, animated: true)
+    }
+}
+    
+
+// MARK: Privates
+extension ViewController {
+    
+    private func setup() {
         addCountries()
         addBorders()
         askQuestion(action: nil)
+        addShareButton()
     }
     
-    // MARK: Privates
+    private func addShareButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(showScore))
+    }
+    
+    @objc private func showScore() {
+        let score = "Your score: \(score)"
+        
+        let vc = UIActivityViewController(
+            activityItems: [score],
+            applicationActivities: nil)
+
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
     
     private func addCountries() {
         countries += [
@@ -76,33 +128,5 @@ class ViewController: UIViewController {
         correctAnswer = 0
         totalAnswered = 0
         askQuestion(action: nil)
-    }
-    
-    // MARK: Actions
-    
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        var title: String
-        
-        totalAnswered += 1
-        
-        if sender.tag == correctAnswer {
-            title = "Correct"
-            score += 1
-        } else {
-            title = "Wrong"
-            score -= 1
-        }
-        
-        let ac = UIAlertController(
-            title: title,
-            message: "Your score is \(score)",
-            preferredStyle: .alert)
-        
-        ac.addAction(UIAlertAction(
-            title: "Continue",
-            style: .default,
-            handler: askQuestion))
-        
-        present(ac, animated: true)
     }
 }
