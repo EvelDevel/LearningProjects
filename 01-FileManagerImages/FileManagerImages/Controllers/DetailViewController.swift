@@ -17,8 +17,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadImage()
-        defaultSetup()
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,14 +34,19 @@ class DetailViewController: UIViewController {
 // MARK: Privates
 extension DetailViewController {
     
-    private func defaultSetup() {
-        title = "Picture \(position) of \(total)"
-        navigationItem.largeTitleDisplayMode = .never
+    private func setup() {
+        loadImage()
+        setupUI()
     }
     
     private func loadImage() {
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
         }
+    }
+    
+    private func setupUI() {
+        title = "Picture \(position) of \(total)"
+        navigationItem.largeTitleDisplayMode = .never
     }
 }

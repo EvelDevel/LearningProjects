@@ -13,24 +13,34 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaultSetup()
-        findPictures()
+        setup()
     }
 }
+
 
 // MARK: Privates
 extension ViewController {
 
-    private func defaultSetup() {
+    private func setup() {
+        setupUI()
+        loadImages()
+    }
+    
+    private func setupUI() {
         title = "Dune"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         if #available(iOS 15, *) {
             tableView.sectionHeaderTopPadding = 0
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(shareTapped))
     }
     
-    private func findPictures() {
+    private func loadImages() {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -42,7 +52,19 @@ extension ViewController {
         }
         pictures.sort()
     }
+    
+    @objc private func shareTapped() {
+        let description = "Share our app"
+        
+        let vc = UIActivityViewController(
+            activityItems: [description],
+            applicationActivities: [])
+
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
 }
+
 
 // MARK: Delegates and Datasource
 extension ViewController {
