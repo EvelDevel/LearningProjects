@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum WordError {
+    case notRecognized
+    case alreadyUsed
+    case notPossible
+}
+
 class ViewController: UITableViewController {
     
     var allWords = [String]()
@@ -19,7 +25,7 @@ class ViewController: UITableViewController {
 }
 
 
-// MARK: Privates
+// MARK: Main setups
 extension ViewController {
     
     private func setup() {
@@ -50,24 +56,11 @@ extension ViewController {
             barButtonSystemItem: .add,
             target: self,
             action: #selector(promptForAnswer))
-    }
-    
-    @objc private func promptForAnswer() {
-        let ac = UIAlertController(
-            title: "Enter answer",
-            message: nil,
-            preferredStyle: .alert
-        )
-        ac.addTextField()
         
-        let submitAction = UIAlertAction(
-            title: "Submit", style: .default) { [weak self, weak ac] _ in
-                guard let answer = ac?.textFields?[0].text else { return }
-                self?.submit(answer)
-            }
-        
-        ac.addAction(submitAction)
-        present(ac, animated: true)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(restartGame))
     }
 }
 
@@ -78,9 +71,6 @@ extension ViewController {
     private func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
         
-        let errorTitle: String
-        let errorMessage: String
-        
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
@@ -89,30 +79,15 @@ extension ViewController {
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
                     return
-                    
                 } else {
-                    errorTitle = "Word not recognized"
-                    errorMessage = "You can't just make them up"
+                    showAlert(type: .notRecognized)
                 }
             } else {
-                errorTitle = "Word already used"
-                errorMessage = "Be more original"
+                showAlert(type: .alreadyUsed)
             }
         } else {
-            errorTitle = "Word not possible"
-            errorMessage = "You can't spell that word from \(title!.lowercased())"
+            showAlert(type: .notPossible)
         }
-        
-        let ac = UIAlertController(
-            title: errorTitle,
-            message: errorMessage,
-            preferredStyle: .alert)
-        
-        ac.addAction(UIAlertAction(
-            title: "Ok",
-            style: .default))
-        
-        present(ac, animated: true)
     }
     
     /// Can we, or can't we make a word from start word
@@ -165,5 +140,60 @@ extension ViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Word", for: indexPath)
         cell.textLabel?.text = usedWords[indexPath.row]
         return cell
+    }
+}
+
+
+// MARK: Helper methods
+extension ViewController {
+    
+    private func showAlert(type: WordError) {
+        let errorTitle: String
+        let errorMessage: String
+        
+        switch type {
+        case .notRecognized:
+            errorTitle = "Word not recognized"
+            errorMessage = "You can't just make them up"
+        case .alreadyUsed:
+            errorTitle = "Word already used"
+            errorMessage = "Be more original"
+        case .notPossible:
+            errorTitle = "Word not possible"
+            errorMessage = "You can't spell that word from \(title!.lowercased())"
+        }
+        
+        let ac = UIAlertController(
+            title: errorTitle,
+            message: errorMessage,
+            preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(
+            title: "Ok",
+            style: .default))
+        
+        present(ac, animated: true)
+    }
+    
+    @objc private func promptForAnswer() {
+        let ac = UIAlertController(
+            title: "Enter answer",
+            message: nil,
+            preferredStyle: .alert
+        )
+        ac.addTextField()
+        
+        let submitAction = UIAlertAction(
+            title: "Submit", style: .default) { [weak self, weak ac] _ in
+                guard let answer = ac?.textFields?[0].text else { return }
+                self?.submit(answer)
+            }
+        
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+    }
+    
+    @objc private func restartGame() {
+        findWords()
     }
 }
