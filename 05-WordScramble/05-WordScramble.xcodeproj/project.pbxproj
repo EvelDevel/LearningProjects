@@ -13,6 +13,7 @@
 		FB4DA548272EA48400F60FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4DA546272EA48400F60FA5 /* Main.storyboard */; };
 		FB4DA54A272EA48500F60FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4DA549272EA48500F60FA5 /* Assets.xcassets */; };
 		FB4DA54D272EA48500F60FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4DA54B272EA48500F60FA5 /* LaunchScreen.storyboard */; };
+		FB4DA555272EA58800F60FA5 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB4DA554272EA58800F60FA5 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FB4DA549272EA48500F60FA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB4DA54C272EA48500F60FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB4DA54E272EA48500F60FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4DA554272EA58800F60FA5 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				FB4DA544272EA48400F60FA5 /* ViewController.swift */,
 				FB4DA546272EA48400F60FA5 /* Main.storyboard */,
 				FB4DA549272EA48500F60FA5 /* Assets.xcassets */,
+				FB4DA554272EA58800F60FA5 /* start.txt */,
 				FB4DA54B272EA48500F60FA5 /* LaunchScreen.storyboard */,
 				FB4DA54E272EA48500F60FA5 /* Info.plist */,
 			);
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB4DA54D272EA48500F60FA5 /* LaunchScreen.storyboard in Resources */,
+				FB4DA555272EA58800F60FA5 /* start.txt in Resources */,
 				FB4DA54A272EA48500F60FA5 /* Assets.xcassets in Resources */,
 				FB4DA548272EA48400F60FA5 /* Main.storyboard in Resources */,
 			);
