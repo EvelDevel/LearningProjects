@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FB5BD5892724659700161D84"
-               BuildableName = "FileManagerImages.app"
-               BlueprintName = "SocialMedia"
-               ReferencedContainer = "container:SocialMedia.xcodeproj">
+               BuildableName = "SocialMedia.app"
+               BlueprintName = "03-SocialMedia"
+               ReferencedContainer = "container:03-SocialMedia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB5BD5892724659700161D84"
-            BuildableName = "FileManagerImages.app"
-            BlueprintName = "SocialMedia"
-            ReferencedContainer = "container:SocialMedia.xcodeproj">
+            BuildableName = "SocialMedia.app"
+            BlueprintName = "03-SocialMedia"
+            ReferencedContainer = "container:03-SocialMedia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB5BD5892724659700161D84"
-            BuildableName = "FileManagerImages.app"
-            BlueprintName = "SocialMedia"
-            ReferencedContainer = "container:SocialMedia.xcodeproj">
+            BuildableName = "SocialMedia.app"
+            BlueprintName = "03-SocialMedia"
+            ReferencedContainer = "container:03-SocialMedia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
