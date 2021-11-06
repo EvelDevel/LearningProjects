@@ -16,6 +16,23 @@ class ViewController: UIViewController {
     var letterButtons: [UIButton] = []
     
     override func loadView() {
+        setupUI()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
+
+// MARK: LOADVIEW METHODS
+extension ViewController {
+    
+    private func setupUI() {
+        setupInterfaceAndConstraints()
+    }
+    
+    private func setupInterfaceAndConstraints() {
         view = UIView()
         view.backgroundColor = .white
         
@@ -117,9 +134,4 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }
-
