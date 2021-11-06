@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB5BD58A2724659700161D84 /* FileManagerImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileManagerImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB5BD58A2724659700161D84 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5BD58D2724659700161D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB5BD58F2724659700161D84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FB5BD5912724659700161D84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		FB5BD5812724659700161D84 = {
 			isa = PBXGroup;
 			children = (
-				FB5BD58C2724659700161D84 /* FileManagerImages */,
+				FB5BD58C2724659700161D84 /* SocialMedia */,
 				FB5BD58B2724659700161D84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,12 +60,12 @@
 		FB5BD58B2724659700161D84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FB5BD58A2724659700161D84 /* FileManagerImages.app */,
+				FB5BD58A2724659700161D84 /* SocialMedia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FB5BD58C2724659700161D84 /* FileManagerImages */ = {
+		FB5BD58C2724659700161D84 /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
 				FB5BD58D2724659700161D84 /* AppDelegate.swift */,
@@ -76,7 +76,7 @@
 				FB5BD5962724659800161D84 /* Assets.xcassets */,
 				FB5BD59B2724659800161D84 /* Info.plist */,
 			);
-			path = FileManagerImages;
+			path = SocialMedia;
 			sourceTree = "<group>";
 		};
 		FB5BD5A1272465FD00161D84 /* Content */ = {
@@ -112,9 +112,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FB5BD5892724659700161D84 /* FileManagerImages */ = {
+		FB5BD5892724659700161D84 /* SocialMedia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB5BD59E2724659800161D84 /* Build configuration list for PBXNativeTarget "FileManagerImages" */;
+			buildConfigurationList = FB5BD59E2724659800161D84 /* Build configuration list for PBXNativeTarget "SocialMedia" */;
 			buildPhases = (
 				FB5BD5862724659700161D84 /* Sources */,
 				FB5BD5872724659700161D84 /* Frameworks */,
@@ -124,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = FileManagerImages;
+			name = SocialMedia;
 			productName = FileManagerImages;
-			productReference = FB5BD58A2724659700161D84 /* FileManagerImages.app */;
+			productReference = FB5BD58A2724659700161D84 /* SocialMedia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -144,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FB5BD5852724659700161D84 /* Build configuration list for PBXProject "FileManagerImages" */;
+			buildConfigurationList = FB5BD5852724659700161D84 /* Build configuration list for PBXProject "SocialMedia" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -157,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FB5BD5892724659700161D84 /* FileManagerImages */,
+				FB5BD5892724659700161D84 /* SocialMedia */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +339,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KPBLB2422Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FileManagerImages/Info.plist;
+				INFOPLIST_FILE = SocialMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -351,7 +351,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.evel-devel.FileManagerImages";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evel-devel.SocialMedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -368,7 +368,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KPBLB2422Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FileManagerImages/Info.plist;
+				INFOPLIST_FILE = SocialMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -380,7 +380,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.evel-devel.FileManagerImages";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evel-devel.SocialMedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -391,7 +391,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FB5BD5852724659700161D84 /* Build configuration list for PBXProject "FileManagerImages" */ = {
+		FB5BD5852724659700161D84 /* Build configuration list for PBXProject "SocialMedia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FB5BD59C2724659800161D84 /* Debug */,
@@ -400,7 +400,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FB5BD59E2724659800161D84 /* Build configuration list for PBXNativeTarget "FileManagerImages" */ = {
+		FB5BD59E2724659800161D84 /* Build configuration list for PBXNativeTarget "SocialMedia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FB5BD59F2724659800161D84 /* Debug */,
