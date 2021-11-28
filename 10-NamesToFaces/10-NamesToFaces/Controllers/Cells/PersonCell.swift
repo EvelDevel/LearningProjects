@@ -9,6 +9,6 @@ import UIKit
 
 class PersonCell: UICollectionViewCell {
     
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
 }
