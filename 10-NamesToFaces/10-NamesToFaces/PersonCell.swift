@@ -11,6 +11,4 @@ class PersonCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-    
-    
 }
