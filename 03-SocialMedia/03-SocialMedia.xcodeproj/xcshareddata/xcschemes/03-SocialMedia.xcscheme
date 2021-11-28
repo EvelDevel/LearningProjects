@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FB5BD5892724659700161D84"
-               BuildableName = "SocialMedia.app"
+               BuildableName = "03-SocialMedia.app"
                BlueprintName = "03-SocialMedia"
                ReferencedContainer = "container:03-SocialMedia.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB5BD5892724659700161D84"
-            BuildableName = "SocialMedia.app"
+            BuildableName = "03-SocialMedia.app"
             BlueprintName = "03-SocialMedia"
             ReferencedContainer = "container:03-SocialMedia.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB5BD5892724659700161D84"
-            BuildableName = "SocialMedia.app"
+            BuildableName = "03-SocialMedia.app"
             BlueprintName = "03-SocialMedia"
             ReferencedContainer = "container:03-SocialMedia.xcodeproj">
          </BuildableReference>
