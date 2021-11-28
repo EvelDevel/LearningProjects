@@ -41,16 +41,24 @@ extension ViewController {
     }
     
     private func loadImages() {
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
-        
-        for item in items {
-            if item.hasPrefix("pic") {
-                pictures.append(item)
+        DispatchQueue.global(qos: .userInitiated).async {
+            [weak self] in
+            
+            let fm = FileManager.default
+            let path = Bundle.main.resourcePath!
+            let items = try! fm.contentsOfDirectory(atPath: path)
+            
+            for item in items {
+                if item.hasPrefix("pic") {
+                    self?.pictures.append(item)
+                }
             }
+            self?.pictures.sort()
         }
-        pictures.sort()
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     @objc private func shareTapped() {

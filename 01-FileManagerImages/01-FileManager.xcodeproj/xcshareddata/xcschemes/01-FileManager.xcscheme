@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FB5BD5892724659700161D84"
-               BuildableName = "FileManagerImages.app"
+               BuildableName = "01-FileManager.app"
                BlueprintName = "01-FileManager"
                ReferencedContainer = "container:01-FileManager.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB5BD5892724659700161D84"
-            BuildableName = "FileManagerImages.app"
+            BuildableName = "01-FileManager.app"
             BlueprintName = "01-FileManager"
             ReferencedContainer = "container:01-FileManager.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB5BD5892724659700161D84"
-            BuildableName = "FileManagerImages.app"
+            BuildableName = "01-FileManager.app"
             BlueprintName = "01-FileManager"
             ReferencedContainer = "container:01-FileManager.xcodeproj">
          </BuildableReference>
