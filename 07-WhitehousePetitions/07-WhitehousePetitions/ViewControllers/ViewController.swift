@@ -29,21 +29,24 @@ class ViewController: UITableViewController {
 extension ViewController {
     
     private func loadContent() {
-        let urlString: String
-        
-        if navigationController?.tabBarItem.tag == 0 {
-            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
-        } else {
-            urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
-        }
-        
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                parseData(json: data)
-                return
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let urlString: String
+            
+            if self?.navigationController?.tabBarItem.tag == 0 {
+                urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+            } else {
+                urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
+            }
+            
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    self?.parseData(json: data)
+                    return
+                }
+                
+                self?.showError()
             }
         }
-        showError()
     }
     
     private func parseData(json: Data) {
@@ -51,7 +54,10 @@ extension ViewController {
         if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
             petitions = jsonPetitions.results
             filteredPetitions = petitions
-            tableView.reloadData()
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
         }
     }
     
@@ -104,28 +110,36 @@ extension ViewController {
     }
     
     private func filterPetitions(text: String) {
-        if text != "" {
-            filteredPetitions.removeAll()
-            filteredPetitions = petitions.filter { $0.title.lowercased().contains(text) }
-        } else {
-            filteredPetitions = petitions
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if let self = self {
+                if text != "" {
+                    self.filteredPetitions.removeAll()
+                    self.filteredPetitions = self.petitions.filter { $0.title.lowercased().contains(text) }
+                } else {
+                    self.filteredPetitions = self.petitions
+                }
+            }
         }
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     private func showError() {
-        let ac = UIAlertController(
-            title: "Loading error",
-            message: "There was a problem loading the feed",
-            preferredStyle: .alert
-        )
-        ac.addAction(
-            UIAlertAction(
-                title: "Ok",
-                style: .default,
-                handler: nil
-            ))
-        present(ac, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            let ac = UIAlertController(
+                title: "Loading error",
+                message: "There was a problem loading the feed",
+                preferredStyle: .alert
+            )
+            ac.addAction(
+                UIAlertAction(
+                    title: "Ok",
+                    style: .default,
+                    handler: nil
+                ))
+            self?.present(ac, animated: true)
+        }
     }
 }
 
