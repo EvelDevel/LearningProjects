@@ -22,5 +22,11 @@ struct LandmarksApp: App {
             LandmarkCommands()
         }
         #endif
+        
+        #if os(macOS)
+        Settings {
+            LandmarkSettings()
+        }
+        #endif
     }
 }

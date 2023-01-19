@@ -41,6 +41,7 @@
 		FB795CC728A91263001B6CAA /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB795CC628A91263001B6CAA /* LandmarksApp.swift */; };
 		FB795CC928A91263001B6CAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB795CC828A91263001B6CAA /* ContentView.swift */; };
 		FB795CCB28A91265001B6CAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB795CCA28A91265001B6CAA /* Assets.xcassets */; };
+		FB7F80C829793680008829F4 /* LandmarkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7F80C729793680008829F4 /* LandmarkSettings.swift */; };
 		FB9044092976A42F00ABFC83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9044082976A42F00ABFC83 /* ContentView.swift */; };
 		FB90440B2976A43000ABFC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB90440A2976A43000ABFC83 /* Assets.xcassets */; };
 		FB90440E2976A43000ABFC83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB90440D2976A43000ABFC83 /* Preview Assets.xcassets */; };
@@ -128,6 +129,7 @@
 		FB795CC628A91263001B6CAA /* LandmarksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksApp.swift; sourceTree = "<group>"; };
 		FB795CC828A91263001B6CAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB795CCA28A91265001B6CAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB7F80C729793680008829F4 /* LandmarkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkSettings.swift; sourceTree = "<group>"; };
 		FB9044042976A42F00ABFC83 /* WatchLandmarks Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchLandmarks Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9044082976A42F00ABFC83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB90440A2976A43000ABFC83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				FB2F8FE829779761003FC592 /* ContentView.swift */,
 				FB2F900029779981003FC592 /* LandmarkDetail.swift */,
+				FB7F80C729793680008829F4 /* LandmarkSettings.swift */,
 				FB2F8FEA29779762003FC592 /* Assets.xcassets */,
 				FB2F8FEF29779762003FC592 /* MacLandmarks.entitlements */,
 				FB2F8FEC29779762003FC592 /* Preview Content */,
@@ -505,6 +508,7 @@
 			files = (
 				FB2F8FE929779761003FC592 /* ContentView.swift in Sources */,
 				FB2F8FFB29779868003FC592 /* CircleImage.swift in Sources */,
+				FB7F80C829793680008829F4 /* LandmarkSettings.swift in Sources */,
 				FB2F8FF529779868003FC592 /* Profile.swift in Sources */,
 				FB2F8FFF29779868003FC592 /* MapView.swift in Sources */,
 				FB2F90062977B0FD003FC592 /* LandmarkCommands.swift in Sources */,
