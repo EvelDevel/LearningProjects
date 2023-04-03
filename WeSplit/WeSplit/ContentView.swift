@@ -8,35 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tapCount = 0
-    @State private var name = ""
-    @State private var selectedStudent = "Harry"
+    @State private var checkAmount = 0.0
+    @State private var numberOfPeople = 2
+    @State private var tipPercentage = 20
     
-    let students = ["Harry", "Hermione", "Ron"]
+    let tipPercentages = [10, 15, 20, 25, 0]
     
     var body: some View {
         NavigationView {
             Form {
-                Picker("Select your student", selection: $selectedStudent) {
-                    ForEach(students, id: \.self) {
-                        Text($0)
+                Section {
+                    TextField(
+                        "Amount",
+                        value: $checkAmount,
+                        format: .currency(
+                            code: Locale.current.currency?.identifier ?? "USD"
+                        )
+                    )
+                    .keyboardType(.decimalPad)
+                    
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(0..<16) {
+                            Text("\($0) people")
+                        }
                     }
                 }
+                
+                Section {
+                    Text(
+                        checkAmount,
+                        format: .currency(
+                            code: Locale.current.currency?.identifier ?? "USD"
+                        )
+                    )
+                }
             }
+            .navigationTitle("WeSplit")
         }
-
-        // Form {
-        //     Group {
-        //         Button("Tap Count: \(tapCount)") {
-        //             tapCount += 1
-        //         }
-        //
-        //         Section {
-        //             TextField("Enter your name", text: $name)
-        //             Text("Your name is \(name)")
-        //         }
-        //     }
-        // }
     }
 }
 
