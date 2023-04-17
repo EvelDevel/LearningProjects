@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ColorPractice: View {
+    @State private var showingAlert = false
+    
     var body: some View {
         Group {
             ZStack {
@@ -35,8 +37,19 @@ struct ColorPractice: View {
                     .buttonStyle(.borderedProminent)
                     .tint(.mint)
                 
-                Button("Button 4", role: .destructive) {}
-                    .buttonStyle(.borderedProminent)
+                Button("Show alert", role: .destructive) {
+                    showingAlert = true
+                }
+                .alert(
+                    "Alert message",
+                    isPresented: $showingAlert
+                ) {
+                    Button("Delete", role: .destructive) {}
+                    Button("Cancel", role: .cancel) {}
+                } message: {
+                    Text("Please read this")
+                }
+                .buttonStyle(.borderedProminent)
             }
         }
     }
