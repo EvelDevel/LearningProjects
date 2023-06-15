@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @State private var usedWords = [String]()
@@ -16,12 +17,15 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @FocusState private var isFocused: Bool
+    
     var body: some View {
         NavigationView {
             List {
                 Section {
                     TextField("Enter your word", text: $newWord)
                         .autocapitalization(.none)
+                        .focused($isFocused)
                 }
                 
                 Section {
@@ -35,18 +39,68 @@ struct ContentView: View {
             }
             .navigationTitle(rootWord)
             .navigationBarTitleDisplayMode(.large)
-            .onSubmit(addNewWord)
-            .onAppear(perform: startGame)
+            .onSubmit {
+                addNewWord()
+            }
+            .onAppear(
+                perform: startGame
+            )
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Restart") {
+                        startGame()
+                    }
+                    .foregroundColor(.black)
+                }
+            }
             .alert(errorTitle, isPresented: $showingError) {
-                Button("OK", role: .cancel) { }
+                Button("OK", role: .cancel) {
+                    isFocused = true
+                }
             } message: {
                 Text(errorMessage)
             }
         }
     }
+}
+
+// MARK: - Game
+
+extension ContentView {
+    func startGame() {
+        if let startWordsURL = Bundle.main.url(
+            forResource: "start",
+            withExtension: "txt"
+        ) {
+            if let startWords = try? String(contentsOf: startWordsURL) {
+                let allWords = startWords.components(separatedBy: "\n")
+                rootWord = allWords.randomElement() ?? ""
+                isFocused = true
+                return
+            }
+        }
+        
+        fatalError("Could nont load the bundle start.txt")
+    }
     
     private func addNewWord() {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        guard isMoreThanThreeLetter(word: answer) else {
+            wordError(
+                title: "The word is too small",
+                message: "Use more than three letters"
+            )
+            return
+        }
+        
+        guard isNotOurStartWord(word: answer) else {
+            wordError(
+                title: "Its our start word",
+                message: "Be more original"
+            )
+            return
+        }
         
         guard isOriginal(word: answer) else {
             wordError(
@@ -81,21 +135,25 @@ struct ContentView: View {
         }
         
         newWord = ""
+        isFocused = true
     }
     
-    func startGame() {
-        if let startWordsURL = Bundle.main.url(
-            forResource: "start",
-            withExtension: "txt"
-        ) {
-            if let startWords = try? String(contentsOf: startWordsURL) {
-                let allWords = startWords.components(separatedBy: "\n")
-                rootWord = allWords.randomElement() ?? ""
-                return
-            }
-        }
-        
-        fatalError("Could nont load the bundle start.txt")
+    func wordError(title: String, message: String) {
+        errorTitle = title
+        errorMessage = message
+        showingError = true
+    }
+}
+
+// MARK: - Validation
+
+extension ContentView {
+    private func isMoreThanThreeLetter(word: String) -> Bool {
+        word.count >= 3
+    }
+    
+    private func isNotOurStartWord(word: String) -> Bool {
+        rootWord != word
     }
     
     private func isOriginal(word: String) -> Bool {
@@ -130,13 +188,9 @@ struct ContentView: View {
         
         return misspelledRange.location == NSNotFound
     }
-    
-    func wordError(title: String, message: String) {
-        errorTitle = title
-        errorMessage = message
-        showingError = true
-    }
 }
+
+// MARK: - Previws
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
