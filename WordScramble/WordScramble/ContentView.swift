@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     @FocusState private var isFocused: Bool
     
     var body: some View {
@@ -26,6 +28,12 @@ struct ContentView: View {
                     TextField("Enter your word", text: $newWord)
                         .autocapitalization(.none)
                         .focused($isFocused)
+                        .autocorrectionDisabled(true)
+                }
+                
+                Section("Score") {
+                    Text("Your score is: \(score)")
+                        .font(.headline)
                 }
                 
                 Section {
@@ -37,7 +45,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle(rootWord)
+            .navigationTitle("Word: \(rootWord)")
             .navigationBarTitleDisplayMode(.large)
             .onSubmit {
                 addNewWord()
@@ -56,6 +64,7 @@ struct ContentView: View {
             .alert(errorTitle, isPresented: $showingError) {
                 Button("OK", role: .cancel) {
                     isFocused = true
+                    newWord = ""
                 }
             } message: {
                 Text(errorMessage)
@@ -75,6 +84,8 @@ extension ContentView {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? ""
+                usedWords = []
+                score = 0
                 isFocused = true
                 return
             }
@@ -134,8 +145,9 @@ extension ContentView {
             usedWords.insert(answer, at: 0)
         }
         
-        newWord = ""
+        score += newWord.count
         isFocused = true
+        newWord = ""        
     }
     
     func wordError(title: String, message: String) {
