@@ -15,7 +15,7 @@ struct ColorChangeAnimation: View {
             enabled.toggle()
         }
         .frame(width: 200, height: 200)
-        .background(enabled ? .blue : .red)
+        .background(enabled ? .cyan : .pink)
         .foregroundColor(.white)
         .clipShape(RoundedRectangle(cornerRadius: enabled ? 60 : 0))
         .animation(.default, value: enabled)

@@ -14,6 +14,10 @@
 		FB04F5B62A42F07A00E88670 /* BooleanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB04F5B52A42F07A00E88670 /* BooleanAnimation.swift */; };
 		FB04F5B82A42F17100E88670 /* ExplicitAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB04F5B72A42F17100E88670 /* ExplicitAnimation.swift */; };
 		FB04F5BA2A43017400E88670 /* ColorChangeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB04F5B92A43017400E88670 /* ColorChangeAnimation.swift */; };
+		FB8CA2362A43EBAA001A86AB /* DragGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CA2352A43EBAA001A86AB /* DragGestures.swift */; };
+		FB8CA2382A43ED84001A86AB /* DragGesturesTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CA2372A43ED84001A86AB /* DragGesturesTwo.swift */; };
+		FB8CA23A2A43F3CF001A86AB /* ShowingAndHiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CA2392A43F3CF001A86AB /* ShowingAndHiding.swift */; };
+		FB8CA23C2A43F7A8001A86AB /* ModifierAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CA23B2A43F7A8001A86AB /* ModifierAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		FB04F5B52A42F07A00E88670 /* BooleanAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanAnimation.swift; sourceTree = "<group>"; };
 		FB04F5B72A42F17100E88670 /* ExplicitAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimation.swift; sourceTree = "<group>"; };
 		FB04F5B92A43017400E88670 /* ColorChangeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChangeAnimation.swift; sourceTree = "<group>"; };
+		FB8CA2352A43EBAA001A86AB /* DragGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestures.swift; sourceTree = "<group>"; };
+		FB8CA2372A43ED84001A86AB /* DragGesturesTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGesturesTwo.swift; sourceTree = "<group>"; };
+		FB8CA2392A43F3CF001A86AB /* ShowingAndHiding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingAndHiding.swift; sourceTree = "<group>"; };
+		FB8CA23B2A43F7A8001A86AB /* ModifierAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,10 @@
 				FB04F5B52A42F07A00E88670 /* BooleanAnimation.swift */,
 				FB04F5B72A42F17100E88670 /* ExplicitAnimation.swift */,
 				FB04F5B92A43017400E88670 /* ColorChangeAnimation.swift */,
+				FB8CA2352A43EBAA001A86AB /* DragGestures.swift */,
+				FB8CA2372A43ED84001A86AB /* DragGesturesTwo.swift */,
+				FB8CA2392A43F3CF001A86AB /* ShowingAndHiding.swift */,
+				FB8CA23B2A43F7A8001A86AB /* ModifierAnimation.swift */,
 				FB04F5AB2A42ED3800E88670 /* Assets.xcassets */,
 				FB04F5AD2A42ED3800E88670 /* Preview Content */,
 			);
@@ -147,9 +159,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB04F5B82A42F17100E88670 /* ExplicitAnimation.swift in Sources */,
+				FB8CA23C2A43F7A8001A86AB /* ModifierAnimation.swift in Sources */,
+				FB8CA2362A43EBAA001A86AB /* DragGestures.swift in Sources */,
 				FB04F5BA2A43017400E88670 /* ColorChangeAnimation.swift in Sources */,
 				FB04F5B62A42F07A00E88670 /* BooleanAnimation.swift in Sources */,
+				FB8CA2382A43ED84001A86AB /* DragGesturesTwo.swift in Sources */,
 				FB04F5AA2A42ED3800E88670 /* PulsingAnimation.swift in Sources */,
+				FB8CA23A2A43F3CF001A86AB /* ShowingAndHiding.swift in Sources */,
 				FB04F5A82A42ED3800E88670 /* AnimationsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
