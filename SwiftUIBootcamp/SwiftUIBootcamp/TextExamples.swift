@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextBootcamp: View {
+struct TextExamples: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("Hello, World!")
@@ -29,6 +29,6 @@ struct TextBootcamp: View {
 
 struct TextBootcamp_Previews: PreviewProvider {
     static var previews: some View {
-        TextBootcamp()
+        TextExamples()
     }
 }
